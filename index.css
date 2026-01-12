@@ -164,4 +164,30 @@ footer { z-index: 2; position: relative; }
 @media (max-width: 991px) {
   .floating { display: none; }
   .shape { opacity: .03; }
+
+}
+
+.profile-img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+}
+.profile-img {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
