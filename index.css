@@ -1,0 +1,167 @@
+
+* { box-sizing: border-box; }
+html, body { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+.text-accent { color: var(--accent) !important; }
+.btn-accent {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(255,255,255,.1);
+}
+
+.bg-black-50 { background: rgba(255,255,255, .03); }
+
+/* Navbar */
+.blur-backdrop {
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+}
+.navbar .nav-link { color: var(--muted); }
+.navbar .nav-link.active, .navbar .nav-link:hover { color: #fff; }
+.navbar-brand.tracking { letter-spacing: 1px; }
+
+/* Hero */
+header#home { padding-top: 96px; }
+.leading-tight { line-height: 1.15; }
+.image-stack {
+  position: relative;
+  display: inline-block;
+}
+.image-stack .main-visual {
+  border-radius: 1.25rem;
+}
+.floating {
+  position: absolute;
+  width: 120px;
+  opacity: .7;
+  animation: float 6s ease-in-out infinite;
+}
+.floating.f-1 { top: -10%; left: -8%; animation-delay: .1s; }
+.floating.f-2 { bottom: -6%; right: -10%; animation-delay: .3s; width: 150px; }
+.floating.f-3 { top: 50%; left: -12%; transform: translateY(-50%); }
+.floating.f-4 { top: -14%; right: -8%; }
+.floating.f-5 { bottom: -10%; left: 40%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Decorative shapes */
+.shape {
+  position: fixed;
+  pointer-events: none;
+  opacity: .05;
+  z-index: 0;
+}
+.shape-1 { top: 5%; left: 2%; width: 180px; }
+.shape-2 { bottom: 10%; right: 8%; width: 220px; }
+.shape-3 { top: 30%; right: 6%; width: 160px; }
+.shape-4 { bottom: 20%; left: 10%; width: 200px; }
+
+/* Sections */
+.section-title {
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 64px;
+  background: var(--accent);
+  margin-top: 8px;
+  border-radius: 999px;
+}
+
+.about-card .stat-card {
+  padding: .75rem 1rem;
+  background: rgba(255,255,255,.02);
+  border: 1px dashed rgba(255,255,255,.1);
+  border-radius: 1rem;
+}
+
+.skill { margin-bottom: 1.25rem; }
+.progress {
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-bar {
+  background: var(--accent);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  margin-left: 1rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid rgba(255,255,255,.15);
+}
+.timeline-item { position: relative; padding: .75rem 0 .75rem .5rem; }
+.timeline-dot {
+  position: absolute;
+  left: -10px;
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid #000;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.08);
+}
+
+/* Cards */
+.project-card { transition: transform .25s ease, box-shadow .25s ease; }
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 48px rgba(255,255,255,.08);
+}
+.object-fit-cover { object-fit: cover; }
+
+/* Contact */
+.form-control:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255,255,255,.15);
+}
+
+/* Footer */
+footer { z-index: 2; position: relative; }
+
+/* Simple fade/slide animation */
+.fade-up { opacity: 0; transform: translateY(12px); animation: fadeUp .8s ease forwards; }
+.fade-up.delay-1 { animation-delay: .15s; }
+.fade-up.delay-2 { animation-delay: .3s; }
+.fade-up.delay-3 { animation-delay: .45s; }
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typewriter */
+.typewriter #typing {
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  padding-right: 4px;
+  animation: caret 1s steps(1) infinite;
+}
+@keyframes caret { 50% { border-right-color: transparent; } }
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .floating { display: none; }
+  .shape { opacity: .03; }
+}
